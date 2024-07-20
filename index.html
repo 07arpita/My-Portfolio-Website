@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arpita portfolio</title>
+
+   <link rel="stylesheet" href="style.css">
+   <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+            <nav id="head">
+                <div class="left">Arpita's Portfolio</div>
+                </div class="right">
+                <ul id="sidemenu">
+                   <li><a href="#head">HOME</a></li>
+                   <li><a href="#about">ABOUT</a></li>
+                   <li><a href="#skills">SKILLS</a></li>
+                   <li><a href="#works">WORKS</a></li>
+                   <li><a href="#contact">CONTACT</a></li>
+          </ul>
+             </div>
+            </nav>
+    </header>
+    <main>
+        <div class="container0">
+            <section class="firstsection">
+                <div class="leftsection">
+                 Hi,my name is 
+                 <br>
+                 <span class="purple">Arpita</span>
+                 <div> and I am</div><span id="element"></span>
+                </div>
+                <div class="rightsection1">
+                    <img src="background.jpg">
+                </div>
+    
+    
+            </section>
+        </div>
+        
+    </main>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+          strings: ['Web Developer','ML Enthussiast', 'Programmer'],
+          typeSpeed: 50,
+          backspeed:50,
+          looped:Infinity
+        });
+      </script>
+
+
+
+      <div id="about">
+        <div class="container1">
+            <div class="row">
+            <div class="about-col1">
+                <img src="Imgabout.jpg" alt="">
+            </div>
+            <div class="about-col2">
+                <h1 class="subtitle">About Me</h1>
+                <p>
+                    
+                    Hello! I'm Arpita Maurya, a second-year B.Tech student at NIT Silchar, specializing in Electronics and Communication Engineering. As a tech enthusiast with a keen interest in machine learning and entrepreneurship, I am always eager to explore and innovate within the tech landscape.
+                    <br><br>
+                    In addition to my academic pursuits, I am actively learning web development and machine learning, continually striving to enhance my skills and knowledge. My passion for technology is complemented by my creative side, as I enjoy drawing and sketching in my free time.
+                    <br>
+                    <br>
+                    Welcome to my portfolio, where you can learn more about my projects, skills, and journey in the world of technology and innovation.</p>
+                
+               
+            </div>
+
+
+
+
+         <div id="skills">
+            <div class="container2">
+                <p class="subtitle">MY SKILLS</p>
+                <div class="skills-list">
+                    <div class="icon" ><img src="cpplogo.jpg" alt="" srcset="">
+                     </div>
+                    <div class="icon"><img src="htmllogo.jpg" alt="" srcset="">
+                    </div>
+                    <div class="icon"><img src="csslogo.jpg" alt="" srcset="">
+                  </div>
+                  
+                  <div class="icon"><img src="jslogo.jpg" alt="" srcset="">
+                  </div>
+                  
+                  <div class="icon"><img src="numpylogo.jpg" alt="" srcset="">
+                  </div>
+
+                </div>
+            </div>
+         </div>
+        </div>
+      </div>
+
+
+
+       <div id="works"> 
+        <div class="container3">
+            <h1 class="sub-title3">MY WORKS</h1>
+            <div class="worklist">
+                <div class="work">
+                    <img src="port.img.png">
+                    <div class="layer">
+                        <h3>My Portfolio</h3>
+                        <p>My first indiviual project</p>
+                        <a href="https://github.com/07arpita/My-Portfolio-Website.git">
+                            </a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="lko.img.png">
+                    <div class="layer">
+                        <h3>City Tour Guide</h3>
+                        <p>A group project for fastweb hackathon.</p>
+                        <a href="https://github.com/07arpita/Lucknow-city-tour-guide.git"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+
+
+            </div>
+            <a href="#" class="btn">See More</a>
+        
+        </div>
+
+       </div>
+
+
+
+       <div id="contact">
+        <div class="container">
+            <div class="row">
+            
+                <div class="contactleft">
+                    <h1 class="subtitle">Contact Me<h1>
+                        <p><i class="fa-solid fa-paper-plane"></i></p>
+                        <p><i class="fa-solid fa-phone"></i></p> 
+                        <div class="socialicons">
+                            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                        <a href="resume@arpita.pdf" class="btn btn2">Download Resume</a>
+                </div>
+                <div class="contactright">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="text" name="Email" placeholder="Your email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Sumbit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+       </div>
+
+
+       <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxqEp68ExFkHbXhP-yOFTTg1shmtQpfJqDMtAPwQ16cmWy-MdEmZaMtPklx6UVldTWnJg/exec'
+        const form = document.forms
+        ['submit-to-google-sheet']
+        const msg=document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {msg.innerHTML="Message sent Successfully"
+                setTimeout(function(){
+                    msg.innerHTML="" },5000)
+                    form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+
+</body>
+</html>
